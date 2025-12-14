@@ -4,7 +4,9 @@ body{
     background:#ffffff;
     color:#111;
 }
-
+p{
+    font-size: 1.1rem;
+}
 h1 {
   font-size: 4rem;
   font-weight: bold;   
@@ -163,6 +165,7 @@ footer{
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
 
 
 
