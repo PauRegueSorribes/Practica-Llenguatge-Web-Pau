@@ -202,7 +202,6 @@ footer{
   background-color: #256f2f;
 }
 
-/* Estil del botó */
 #themeToggle {
   position: fixed;
   top: 20px;
@@ -216,7 +215,6 @@ footer{
   font-weight: bold;
 }
 
-/* MODE FOSC */
 body.dark {
   background-color: #121212;
   color: #e5e5e5;
@@ -233,6 +231,10 @@ body.dark img {
   filter: brightness(0.85);
 }
 
+body.dark video { 
+    filter: none !important; 
+    background-color: #000; 
+}
 
 
 
