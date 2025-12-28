@@ -228,15 +228,15 @@ body.dark footer {
   color: #e5e5e5;
 }
 
-body.dark img {
+body.dark .hero-video {
   filter: blur(6px) brightness(0.85);
 }
 
-body.dark video { 
-    filter: none; 
-    background-color: #000; 
-    filter: blur(6px) brightness(0.85);
+body.dark img {
+  filter: brightness(0.85);
 }
+
+
 
 
 
