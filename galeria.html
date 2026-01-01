@@ -157,12 +157,8 @@
     const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
 
-
-    if (!localStorage.getItem("theme")) {
-      localStorage.setItem("theme", "light");
-    }
-
-
+    localStorage.setItem("theme", "light");
+    
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark");
       toggleBtn.textContent = "Mode clar";
@@ -396,6 +392,7 @@ body.dark img {
 
 
 </html>
+
 
 
 
