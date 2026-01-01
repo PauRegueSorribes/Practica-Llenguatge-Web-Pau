@@ -173,10 +173,7 @@
 const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
 
-
-if (!localStorage.getItem("theme")) {
-  localStorage.setItem("theme", "light");
-}
+localStorage.setItem("theme", "light");
 
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
@@ -201,6 +198,7 @@ if (localStorage.getItem("theme") === "dark") {
 
 </body>
 </html>
+
 
 
 
