@@ -173,10 +173,18 @@
 const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
 
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "Mode clar";
-  }
+
+if (!localStorage.getItem("theme")) {
+  localStorage.setItem("theme", "light");
+}
+
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+  toggleBtn.textContent = "Mode clar";
+} else {
+  toggleBtn.textContent = "Mode fosc";
+}
+
 
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("dark");
@@ -193,6 +201,7 @@ const toggleBtn = document.getElementById("themeToggle");
 
 </body>
 </html>
+
 
 
 
