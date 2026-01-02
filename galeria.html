@@ -158,24 +158,33 @@
 const toggleBtn = document.getElementById("themeToggle");
 const body = document.body;
 
-if (localStorage.getItem("theme") === "dark") {
+// Si no hi ha tema guardat en aquesta sessió → comencem en clar
+if (!sessionStorage.getItem("theme")) {
+  sessionStorage.setItem("theme", "light");
+}
+
+// Apliquem el tema guardat
+if (sessionStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggleBtn.textContent = "Mode clar";
 } else {
+  body.classList.remove("dark");
   toggleBtn.textContent = "Mode fosc";
 }
 
+// Canvi de tema
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 
   if (body.classList.contains("dark")) {
+    sessionStorage.setItem("theme", "dark");
     toggleBtn.textContent = "Mode clar";
-    localStorage.setItem("theme", "dark");
   } else {
+    sessionStorage.setItem("theme", "light");
     toggleBtn.textContent = "Mode fosc";
-    localStorage.setItem("theme", "light");
   }
 });
+
 
 </script>
     
@@ -391,6 +400,7 @@ body.dark img {
 
 
 </html>
+
 
 
 
