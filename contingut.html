@@ -173,12 +173,10 @@
 const toggleBtn = document.getElementById("themeToggle");
 const body = document.body;
 
-// Si no hi ha tema guardat en aquesta sessió → comencem en clar
 if (!sessionStorage.getItem("theme")) {
   sessionStorage.setItem("theme", "light");
 }
 
-// Apliquem el tema guardat
 if (sessionStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggleBtn.textContent = "Mode clar";
@@ -187,7 +185,6 @@ if (sessionStorage.getItem("theme") === "dark") {
   toggleBtn.textContent = "Mode fosc";
 }
 
-// Canvi de tema
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -204,6 +201,7 @@ toggleBtn.addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
