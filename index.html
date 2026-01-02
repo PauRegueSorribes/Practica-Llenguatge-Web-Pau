@@ -54,6 +54,14 @@ if (!localStorage.getItem("hasVisited")) {
   localStorage.setItem("hasVisited", "true");
 }
 
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+// Si l'usuari entra des de fora i no hi ha tema guardat → light per defecte
+if (!localStorage.getItem("theme") && document.referrer === "") {
+  localStorage.setItem("theme", "light");
+}
+
 // Apliquem el tema guardat
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
@@ -62,6 +70,7 @@ if (localStorage.getItem("theme") === "dark") {
   toggleBtn.textContent = "Mode fosc";
 }
 
+// Canvi de tema
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -74,6 +83,7 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
+
 </script>
 
 </main>
@@ -83,6 +93,7 @@ toggleBtn.addEventListener("click", () => {
 </footer>
 </body>
 </html>
+
 
 
 
