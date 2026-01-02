@@ -46,27 +46,36 @@
   const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
  
-localStorage.setItem("theme", "light");
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
 
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
+// Si és la primera visita, establim light per defecte
+if (!localStorage.getItem("hasVisited")) {
+  localStorage.setItem("theme", "light");
+  localStorage.setItem("hasVisited", "true");
+}
+
+// Apliquem el tema guardat
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+  toggleBtn.textContent = "Mode clar";
+} else {
+  toggleBtn.textContent = "Mode fosc";
+}
+
+// Canvi de tema
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
     toggleBtn.textContent = "Mode clar";
+    localStorage.setItem("theme", "dark");
   } else {
     toggleBtn.textContent = "Mode fosc";
+    localStorage.setItem("theme", "light");
   }
+});
 
-
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    if (body.classList.contains("dark")) {
-      toggleBtn.textContent = "Mode clar";
-      localStorage.setItem("theme", "dark");
-    } else {
-      toggleBtn.textContent = "Mode fosc";
-      localStorage.setItem("theme", "light");
-    }
-  });
 </script>
 
 </main>
@@ -76,6 +85,7 @@ localStorage.setItem("theme", "light");
 </footer>
 </body>
 </html>
+
 
 
 
