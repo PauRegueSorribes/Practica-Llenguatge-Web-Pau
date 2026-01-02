@@ -112,10 +112,9 @@
   });
     
   const toggleBtn = document.getElementById("themeToggle");
-  const body = document.body;
-  const toggleBtn = document.getElementById("themeToggle");
 const body = document.body;
 
+// Apliquem el tema guardat quan carreguem la pàgina
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggleBtn.textContent = "Mode clar";
@@ -123,6 +122,7 @@ if (localStorage.getItem("theme") === "dark") {
   toggleBtn.textContent = "Mode fosc";
 }
 
+// Quan l’usuari fa clic, canviem i guardem
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -135,23 +135,14 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
 
-    if (body.classList.contains("dark")) {
-      toggleBtn.textContent = "Mode clar";
-      localStorage.setItem("theme", "dark");
-    } else {
-      toggleBtn.textContent = "Mode fosc";
-      localStorage.setItem("theme", "light");
-    }
-  });
 
 </script>
 </body>
   
 
 </html>
+
 
 
 
